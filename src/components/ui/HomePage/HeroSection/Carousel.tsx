@@ -1,15 +1,8 @@
 "use client";
 
-import { Box } from "@mui/material";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 import banner1 from "@/assets/banner/banner-1.png";
 import banner2 from "@/assets/banner/banner-2.png";
@@ -18,59 +11,46 @@ import Image from "next/image";
 
 const Carousel = () => {
   const settings = {
-    dots: true,
+    className: "center mx-4",
+    centerMode: true,
     infinite: true,
-    speed: 500,
+    centerPadding: "60px",
     slidesToShow: 3,
-    slidesToScroll: 1,
+    speed: 500,
   };
 
   return (
-    <Box sx={{ padding: "20px" }}>
-      {" "}
-      {/* Apply padding to create a gap around the slider */}
+    <div className="w-full max-w-[1000px] mx-auto slider-container">
       <Slider {...settings}>
-        <Box
-          component="div"
-          sx={{
-            borderRadius: "10px",
-            bgcolor: "lightcoral",
-            margin: "10px",
-            padding: "8px", // Apply padding to create a gap between slider items
-          }}
-        >
-          <Box display="flex" justifyContent="center">
-            <Image src={banner1} width={200} height={200} alt="banner1" />
-          </Box>
-        </Box>
-        <Box
-          component="div"
-          sx={{
-            borderRadius: "10px",
-            bgcolor: "lightcoral",
-            margin: "10px",
-            padding: "8px", // Apply padding to create a gap between slider items
-          }}
-        >
-          <Box display="flex" justifyContent="center">
-            <Image src={banner1} width={200} height={200} alt="banner1" />
-          </Box>
-        </Box>
-        <Box
-          component="div"
-          sx={{
-            borderRadius: "10px",
-            bgcolor: "lightcoral",
-            margin: "10px",
-            padding: "8px", // Apply padding to create a gap between slider items
-          }}
-        >
-          <Box display="flex" justifyContent="center">
-            <Image src={banner1} width={200} height={200} alt="banner1" />
-          </Box>
-        </Box>
+        <div className="border-black border w-[200px] rounded-md ">
+          <Image
+            className="mx-auto"
+            src={banner1}
+            width={200}
+            height={200}
+            alt="banner1"
+          />
+        </div>
+        <div className="border-black border w-[200px] rounded-md ">
+          <Image
+            className="mx-auto"
+            src={banner2}
+            width={200}
+            height={200}
+            alt="banner2"
+          />
+        </div>
+        <div className="border-black border w-[200px] rounded-md ">
+          <Image
+            className="mx-auto"
+            src={banner3}
+            width={168}
+            height={170}
+            alt="banner3"
+          />
+        </div>
       </Slider>
-    </Box>
+    </div>
   );
 };
 

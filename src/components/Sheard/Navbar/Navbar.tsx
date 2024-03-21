@@ -53,7 +53,7 @@ const Navbar = () => {
               },
             }}
           >
-            About
+            Flash Sale
           </Typography>
           <Typography
             component={Link}
