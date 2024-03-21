@@ -7,7 +7,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const ClothCard = ({ product }: { product: TProduct }) => {
   return (
-    <div className="rounded-lg bg-white text-white shadow-secondary-1 dark:bg-surface-dark border-2">
+    <div className="rounded-lg bg-white text-white shadow-secondary-1 dark:bg-surface-dark w-[300px] border-2 border-gray-500 p-2 mx-auto">
       <Box position="relative">
         <Typography
           position="absolute"

@@ -20,7 +20,14 @@ const HeroSection = () => {
                 </Typography>
               </Typography>
             </Stack>
-            <Typography component="p" width={400} mb={2} margin="0 auto">
+            <Typography
+              component="p"
+              width={{
+                md: 400,
+              }}
+              mb={2}
+              margin="0 auto"
+            >
               Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum.
             </Typography>
