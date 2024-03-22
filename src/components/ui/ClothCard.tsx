@@ -4,10 +4,15 @@ import { TProduct } from "@/types/global";
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import Link from "next/link";
 
 const ClothCard = ({ product }: { product: TProduct }) => {
   return (
-    <div className="rounded-lg bg-white text-white shadow-secondary-1 dark:bg-surface-dark w-[280px] border-2 border-gray-500 p-2 mx-auto">
+    <Box
+      component={Link}
+      href={`/products/${product._id}`}
+      className="rounded-lg bg-white text-white shadow-secondary-1 dark:bg-surface-dark w-[280px] border-2 border-gray-500 p-2 mx-auto"
+    >
       <Box position="relative">
         <Typography
           position="absolute"
@@ -46,7 +51,7 @@ const ClothCard = ({ product }: { product: TProduct }) => {
                   color: "red",
                 }}
               >
-                ৳ ${product.price}{" "}
+                ৳ {product.price}{" "}
               </Typography>
               <Typography fontWeight={600}>৳ {product.salePrice} </Typography>
             </Stack>
@@ -60,7 +65,7 @@ const ClothCard = ({ product }: { product: TProduct }) => {
           </Typography>
         </Stack>
       </Box>
-    </div>
+    </Box>
   );
 };
 
