@@ -13,9 +13,24 @@ const HeroSection = () => {
         <Stack pt={10}>
           <Box textAlign="center">
             <Stack direction="column">
-              <Typography variant="h2" component="h1">
+              <Typography
+                component="h1"
+                fontSize={{
+                  md: 50,
+                  xs: 30,
+                }}
+                fontWeight={600}
+              >
                 Find The Best Fashion Style{" "}
-                <Typography variant="h3" component="h1" color="primary.main">
+                <Typography
+                  component="span"
+                  color="primary.main"
+                  fontSize={{
+                    md: 50,
+                    xs: 30,
+                  }}
+                  fontWeight={600}
+                >
                   For You
                 </Typography>
               </Typography>
@@ -31,7 +46,13 @@ const HeroSection = () => {
               Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum.
             </Typography>
-            <Button>Shop now</Button>
+            <Button
+              sx={{
+                mt: 2,
+              }}
+            >
+              Shop now
+            </Button>
           </Box>
 
           {/* slider */}
