@@ -39,7 +39,7 @@ const Navbar = () => {
           </Typography>
           <Typography
             component={Link}
-            href="/"
+            href="/flash-sale"
             sx={{
               borderBottom: "2px solid white",
               borderRadius: "3px",

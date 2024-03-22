@@ -4,10 +4,12 @@ import { TProduct } from "@/types/global";
 import ClothCard from "../../ClothCard";
 
 const TrendingProducts = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/products`);
+  const res = await fetch(`${process.env.BASE_URL}/products`, {
+    next: {
+      revalidate: 30,
+    },
+  });
   const { data } = await res.json();
-
-  //   console.log(data);
 
   const trendingProducts = data.sort(
     (a: TProduct, b: TProduct) => b.rating - a.rating
@@ -54,7 +56,7 @@ const TrendingProducts = async () => {
         </Box>
 
         <Box mt={5}>
-          <div className="grid md:grid-cols-3 gap-10 ">
+          <div className="grid md:grid-cols-4 gap-10 ">
             {trendingProducts?.slice(0, 6)?.map((product: TProduct) => (
               <ClothCard key={product._id} product={product} />
             ))}

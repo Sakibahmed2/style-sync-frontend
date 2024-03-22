@@ -6,4 +6,6 @@ export type TProduct = {
   price: number;
   brand: string;
   description: string;
+  sale?: boolean;
+  salePrice?: number | null;
 };
