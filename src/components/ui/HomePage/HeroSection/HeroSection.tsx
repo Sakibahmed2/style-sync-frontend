@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <Box
       sx={{
-        bgcolor: "lightgray",
+        bgcolor: "#e1e1e6",
         height: "100vh",
       }}
     >

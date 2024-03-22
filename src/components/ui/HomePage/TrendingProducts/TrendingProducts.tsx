@@ -2,6 +2,7 @@ import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { TProduct } from "@/types/global";
 import ClothCard from "../../ClothCard";
+import Link from "next/link";
 
 const TrendingProducts = async () => {
   const res = await fetch(`${process.env.BASE_URL}/products`, {
@@ -48,6 +49,8 @@ const TrendingProducts = async () => {
                   gap: 1,
                   mt: 2,
                 }}
+                component={Link}
+                href="/products"
               >
                 See All <ArrowCircleRightOutlinedIcon />
               </Button>

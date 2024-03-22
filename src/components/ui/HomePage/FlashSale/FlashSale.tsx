@@ -2,6 +2,7 @@ import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import ClothCard from "../../ClothCard";
 import { TProduct } from "@/types/global";
+import Link from "next/link";
 
 const FlashSale = async () => {
   const res = await fetch(`${process.env.BASE_URL}/products`, {
@@ -10,6 +11,8 @@ const FlashSale = async () => {
     },
   });
   const { data } = await res.json();
+
+  const saleProducts = data?.filter((product: TProduct) => product.sale);
 
   return (
     <Box my={20}>
@@ -25,6 +28,8 @@ const FlashSale = async () => {
                 alignItems: "center",
                 gap: 1,
               }}
+              component={Link}
+              href="/flash-sale"
             >
               See All <ArrowCircleRightOutlinedIcon />
             </Button>
@@ -40,7 +45,7 @@ const FlashSale = async () => {
               margin: "0 auto",
             }}
           >
-            {data?.slice(0, 4)?.map((product: TProduct) => (
+            {saleProducts?.slice(0, 4)?.map((product: TProduct) => (
               <ClothCard key={product._id} product={product} />
             ))}
           </Stack>

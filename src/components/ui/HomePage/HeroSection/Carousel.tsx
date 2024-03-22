@@ -4,9 +4,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-import banner1 from "@/assets/banner/banner-1.png";
-import banner2 from "@/assets/banner/banner-2.png";
-import banner3 from "@/assets/banner/banner-3.png";
+import banner1 from "@/assets/mensPolo.jpg";
+import banner2 from "@/assets/womensKurti.jpg";
+import banner3 from "@/assets/kidsTshairt.jpg";
+import banner4 from "@/assets/womanDress.webp";
+
 import Image from "next/image";
 
 const Carousel = () => {
@@ -52,8 +54,8 @@ const Carousel = () => {
           <Image
             className="mx-auto"
             src={banner1}
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             alt="banner1"
           />
         </div>
@@ -61,8 +63,8 @@ const Carousel = () => {
           <Image
             className="mx-auto"
             src={banner2}
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             alt="banner2"
           />
         </div>
@@ -70,9 +72,18 @@ const Carousel = () => {
           <Image
             className="mx-auto"
             src={banner3}
-            width={168}
-            height={170}
+            width={300}
+            height={300}
             alt="banner3"
+          />
+        </div>
+        <div className="border-black border w-[200px] rounded-md ">
+          <Image
+            className="mx-auto"
+            src={banner4}
+            width={300}
+            height={300}
+            alt="banner4"
           />
         </div>
       </Slider>

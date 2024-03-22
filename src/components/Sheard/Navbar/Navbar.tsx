@@ -57,7 +57,7 @@ const Navbar = () => {
           </Typography>
           <Typography
             component={Link}
-            href="/"
+            href="/products"
             sx={{
               borderBottom: "2px solid white",
               borderRadius: "3px",
@@ -71,7 +71,7 @@ const Navbar = () => {
               },
             }}
           >
-            Flash seal
+            Products
           </Typography>
           <Typography
             component={Link}

@@ -48,10 +48,10 @@ const ClothCard = ({ product }: { product: TProduct }) => {
               >
                 ৳ ${product.price}{" "}
               </Typography>
-              <Typography fontWeight={600}>৳ ${product.salePrice} </Typography>
+              <Typography fontWeight={600}>৳ {product.salePrice} </Typography>
             </Stack>
           ) : (
-            <Typography fontWeight={600}>৳ ${product.price}</Typography>
+            <Typography fontWeight={600}>৳ {product.price}</Typography>
           )}
 
           <Typography component="span">
