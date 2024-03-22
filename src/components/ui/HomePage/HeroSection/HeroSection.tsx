@@ -10,7 +10,12 @@ const HeroSection = () => {
       }}
     >
       <Container>
-        <Stack pt={10}>
+        <Stack
+          pt={{
+            md: 20,
+            xs: 25,
+          }}
+        >
           <Box textAlign="center">
             <Stack direction="column">
               <Typography

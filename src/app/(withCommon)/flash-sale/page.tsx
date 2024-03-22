@@ -8,7 +8,7 @@ const FlashSalePage = async () => {
   const { data } = await res.json();
 
   return (
-    <Box mt={4} mb={10}>
+    <Box pt={15} mb={10}>
       <Container>
         <Box textAlign={"center"}>
           <CountdownTimer durationInMinutes={30} />
