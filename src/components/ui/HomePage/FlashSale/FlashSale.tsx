@@ -26,7 +26,7 @@ const FlashSale = async () => {
                 gap: 1,
               }}
             >
-              View all <ArrowCircleRightOutlinedIcon />
+              See All <ArrowCircleRightOutlinedIcon />
             </Button>
           </Stack>
         </Box>
