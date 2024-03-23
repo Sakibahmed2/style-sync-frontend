@@ -97,7 +97,7 @@ export default function ResponsiveNavbar(props: Props) {
           </Typography>
           <Typography
             component={Link}
-            href="/"
+            href="/dashboard/all-products"
             sx={{
               borderBottom: "2px solid white",
               borderRadius: "3px",
@@ -111,7 +111,7 @@ export default function ResponsiveNavbar(props: Props) {
               },
             }}
           >
-            Category
+            Dashboard
           </Typography>
         </Stack>
       </List>
@@ -212,7 +212,7 @@ export default function ResponsiveNavbar(props: Props) {
                   </Typography>
                   <Typography
                     component={Link}
-                    href="/"
+                    href="/dashboard/all-products"
                     sx={{
                       borderBottom: "2px solid white",
                       borderRadius: "3px",
@@ -226,7 +226,7 @@ export default function ResponsiveNavbar(props: Props) {
                       },
                     }}
                   >
-                    Category
+                    Dashboard
                   </Typography>
                 </Stack>
               </Box>
