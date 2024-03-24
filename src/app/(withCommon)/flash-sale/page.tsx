@@ -4,8 +4,12 @@ import { TProduct } from "@/types/global";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 
 const FlashSalePage = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/products`);
+  const res = await fetch(
+    `https://style-sync-backend.vercel.app/api/v1/products`
+  );
   const { data } = await res.json();
+
+  const flashSale = data?.filter((item: TProduct) => item.sale);
 
   return (
     <Box pt={15} mb={10}>
@@ -36,7 +40,7 @@ const FlashSalePage = async () => {
         </Box>
         <Box mt={5}>
           <div className="grid md:grid-cols-4 gap-10 ">
-            {data?.slice(0, 10)?.map((product: TProduct) => (
+            {flashSale?.map((product: TProduct) => (
               <ClothCard key={product._id} product={product} />
             ))}
           </div>

@@ -5,11 +5,14 @@ import ClothCard from "../../ClothCard";
 import Link from "next/link";
 
 const TrendingProducts = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/products`, {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const res = await fetch(
+    `https://style-sync-backend.vercel.app/api/v1/products`,
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
   const { data } = await res.json();
 
   const trendingProducts = data.sort(

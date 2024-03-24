@@ -1,7 +1,7 @@
-import { Box, Container, Rating, Stack, Typography } from "@mui/material";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import { TProduct } from "@/types/global";
 import HomeRepairServiceIcon from "@mui/icons-material/HomeRepairService";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import { Box, Container, Rating, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 
 type TProps = {
@@ -10,24 +10,29 @@ type TProps = {
   };
 };
 
-const SingleProductPage = async ({ params }: TProps) => {
-  console.log(params);
-
+export const generateStaticParams = async () => {
   const res = await fetch(
-    `${process.env.BASE_URL}/products/${params.productId}`,
+    "https://style-sync-backend.vercel.app/api/v1/products"
+  );
+  const { data } = await res.json();
+  return data.slice(0, 10).map((product: TProduct) => ({
+    productId: product._id,
+  }));
+};
+
+const SingleProductPage = async ({ params }: TProps) => {
+  const res = await fetch(
+    `https://style-sync-backend.vercel.app/api/v1/products/${params.productId}`,
     {
-      next: {
-        revalidate: 30,
-      },
+      cache: "no-store",
     }
   );
   const { data } = await res.json();
-  console.log(data);
 
   const { image, price, description, rating, title, salePrice, sale } = data;
 
   return (
-    <Box my={10}>
+    <Box my={15}>
       <Container>
         <Stack
           direction={{

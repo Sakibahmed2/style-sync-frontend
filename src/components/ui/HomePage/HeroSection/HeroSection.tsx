@@ -1,5 +1,41 @@
+"use client";
+
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Carousel from "./Carousel";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+const textAnimation = {
+  hidden: {
+    scale: 0.2,
+    y: -300,
+  },
+  visible: {
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: 0.2,
+      type: "spring",
+      stiffness: 60,
+    },
+  },
+};
+
+const carouselAnimation = {
+  hidden: {
+    scale: 0.2,
+    y: 300,
+  },
+  visible: {
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: 0.9,
+      type: "spring",
+      stiffness: 60,
+    },
+  },
+};
 
 const HeroSection = () => {
   return (
@@ -16,7 +52,12 @@ const HeroSection = () => {
             xs: 25,
           }}
         >
-          <Box textAlign="center">
+          <motion.div
+            variants={textAnimation}
+            initial="hidden"
+            animate="visible"
+            className="text-center"
+          >
             <Stack direction="column">
               <Typography
                 component="h1"
@@ -43,27 +84,35 @@ const HeroSection = () => {
             <Typography
               component="p"
               width={{
-                md: 400,
+                md: 600,
               }}
               mb={2}
               margin="0 auto"
             >
-              Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum.
+              Style Sync: Elevate your style effortlessly with curated fashion.
+              Discover trendiness and affordability in our collection. Explore
+              now for fashion that resonates.
             </Typography>
             <Button
+              component={Link}
+              href="/products"
               sx={{
                 mt: 2,
               }}
             >
               Shop now
             </Button>
-          </Box>
+          </motion.div>
 
           {/* slider */}
-          <Box mt={4}>
+          <motion.div
+            variants={carouselAnimation}
+            initial="hidden"
+            animate="visible"
+            className="mt-10"
+          >
             <Carousel />
-          </Box>
+          </motion.div>
         </Stack>
       </Container>
     </Box>
